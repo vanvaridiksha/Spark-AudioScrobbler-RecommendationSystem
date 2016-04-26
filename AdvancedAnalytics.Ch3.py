@@ -23,9 +23,9 @@ quiet_logs(sc)
 
 print "Initialized successfully, loading the dataset..."
 # Actual code goes here.
-datasetPath = 'audioscrobbler/user_artist_data.txt'
-artistDataPath = 'audioscrobbler/artist_data.txt'
-artistAliasPath = 'audioscrobbler/artist_alias.txt'
+datasetPath = 'audio_data/user_artist_data.txt'
+artistDataPath = 'audio_data/artist_data.txt'
+artistAliasPath = 'audio_data/artist_alias.txt'
 numPartitions = 2
 rawDataRDD = sc.textFile(datasetPath, numPartitions)
 rawDataRDD.cache()
