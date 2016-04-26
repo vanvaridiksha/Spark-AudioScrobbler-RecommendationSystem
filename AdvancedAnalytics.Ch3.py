@@ -1,5 +1,4 @@
-__author__ = 'Andrey Mironoff'
-execfile('Init.py')
+
 
 import os
 import os.path
@@ -7,7 +6,7 @@ import os.path
 from pyspark import SparkContext
 from pyspark import SparkConf
 
-os.chdir("/home/vagrant/")
+
 
 def quiet_logs( sc ):
   logger = sc._jvm.org.apache.log4j
@@ -24,13 +23,9 @@ quiet_logs(sc)
 
 print "Initialized successfully, loading the dataset..."
 # Actual code goes here.
-basePath = 'data/advanced_analytics'
-datasetFolder = 'audioscrobbler/user_artist_data.txt'
-artistDataFolder = 'audioscrobbler/artist_data.txt'
-artistAliasFolder = 'audioscrobbler/artist_alias.txt'
-datasetPath = os.path.join(basePath, datasetFolder)
-artistDataPath = os.path.join(basePath, artistDataFolder)
-artistAliasPath = os.path.join(basePath, artistAliasFolder)
+datasetPath = 'audioscrobbler/user_artist_data.txt'
+artistDataPath = 'audioscrobbler/artist_data.txt'
+artistAliasPath = 'audioscrobbler/artist_alias.txt'
 numPartitions = 2
 rawDataRDD = sc.textFile(datasetPath, numPartitions)
 rawDataRDD.cache()
